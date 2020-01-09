@@ -27,7 +27,9 @@ Energy efficiency is the ratio between the output and the input of an energy con
 |-----------|------------|----------------|--------------|--------------|-------------------------|
 |XEON       | 65nm       | 3400MHz        | 36.8319 W    | 98.1063 W    | 134.938 W               |
 |ARM A9     | 40nm       | 2000MHz        | 0.108687 W   | 1.6332 W     | 1.74189 W               |
+
 Due to the difference on the clockrate and as a result of the power consumption, XEON can not be more energy efficient than ARM A9, because energy efficiency is related only to energy input and output and not to the speed duration. So even if we decrease the duration of XEON 40 times, the total energy consumed will still remain higher. This is presented more thorough an the paradigm below.
+
 The total power consumption of ARM A9 is 1.74189 W. Assuming t is the execution time of XEON, while ARM' duration is 40 times bigger, then its execution time will be 40t. So the energy output will be **1.74819 * 40t = 69,9276 W < 134.938 W**.
 
 ## Question 2
@@ -49,7 +51,7 @@ Here we use `plot.py`. This script plots EDAP for each parameter:
 <img src=img/l2-cache-line.jpg>
 </p>
 
-### Comparison w/ the previous cost function
+### Comparison with the previous cost function
 Script `topk.py` orders the results according to EDAP. We see that the best configuration is:
 
 - L1 i-Cache size: **32KB**
